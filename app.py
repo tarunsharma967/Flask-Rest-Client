@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request,redirect
 import services
+import os
 
 app = Flask(__name__)
 
@@ -27,6 +28,6 @@ def delete(id):
 	return redirect(url_for('all'))
 
 
-
-
-app.run()
+if __name__ == '__main__':
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port, debug=True)
