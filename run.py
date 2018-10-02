@@ -29,4 +29,4 @@ def delete(id):
 
 
 
-app.run(debug= True, port=8000);
+app.run()
