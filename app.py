@@ -4,11 +4,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-	return '<h1>Hello World<h1>'
-
-@app.route('/all') 
+@app.route('/') 
 def all():
 	js = services.getAll()
 	return render_template("list.html",js=js)
